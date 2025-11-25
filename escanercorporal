@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metabolismo 360 - Tu Escáner Corporal Profesional</title>
+    <!-- Carga de Tailwind CSS para un diseño limpio y profesional -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Definición de colores base */
+        :root {
+            --color-primary: #0A3D62; /* Azul Marino Profundo (Confianza, Ciencia) */
+            --color-accent: #68D391; /* Verde Menta (Salud, Energía) */
+            --color-text: #1A202C; /* Gris Oscuro para texto principal */
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--color-text);
+            background-color: #F7FAFC; /* Gris Hielo */
+        }
+        .bg-primary { background-color: var(--color-primary); }
+        .text-primary { color: var(--color-primary); }
+        .bg-accent { background-color: var(--color-accent); }
+        .hover-bg-accent:hover { background-color: #48BB78; /* Un verde ligeramente más oscuro al pasar el ratón */ }
+
+        /* Estilos para la barra de navegación pegajosa (fixed) */
+        .header-shadow {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        /* Animación simple para los botones */
+        .cta-button {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- BARRA SUPERIOR (HEADER) -->
+    <header class="bg-white header-shadow sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="text-2xl font-extrabold text-primary">
+                METABOLISMO 360
+            </div>
+            <!-- Botón de Acción en el Header -->
+            <button onclick="redirectToWhatsApp()" class="bg-accent text-primary font-bold py-2 px-4 rounded-lg cta-button">
+                AGENDAR CITA
+            </button>
+        </div>
+    </header>
+
+    <!-- 2. SECCIÓN PRINCIPAL (HERO SECTION) -->
+    <main>
+        <section class="bg-white pt-16 pb-20 sm:pt-24 sm:pb-32">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-5xl sm:text-6xl font-extrabold tracking-tight text-primary leading-tight">
+                    Tu salud no es un número en la báscula. <span class="text-accent">Es una ciencia.</span>
+                </h1>
+                <p class="mt-6 max-w-3xl mx-auto text-xl text-gray-600">
+                    Descubre tu composición corporal real con tecnología de bioimpedancia clínica. Análisis de 9 parámetros en solo 3 minutos.
+                </p>
+                <div class="mt-10">
+                    <button onclick="redirectToWhatsApp()" class="cta-button bg-accent text-primary font-extrabold text-lg py-4 px-10 rounded-xl shadow-xl hover-bg-accent">
+                        SOLICITAR MI ESCÁNER GRATUITO ➜
+                    </button>
+                    <p class="mt-3 text-sm text-gray-500">
+                        *Oferta de cortesía válida solo por tiempo limitado.
+                    </p>
+                </div>
+                <!-- Placeholder de imagen tecnológica y profesional -->
+                <div class="mt-16">
+                     <img src="https://placehold.co/800x400/0A3D62/FFFFFF?text=IMAGEN+DE+TECNOLOG%C3%8DA+O+B%C3%81SCULA+DE+BIOIMPEDANCIA" alt="Imagen de tecnología de bioimpedancia" class="rounded-xl shadow-2xl mx-auto">
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. SECCIÓN EDUCATIVA: "El problema del peso" -->
+        <section class="bg-gray-100 py-20 sm:py-32">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center text-primary">
+                    ¿Por qué pesarse no es suficiente?
+                </h2>
+                <div class="mt-12 grid md:grid-cols-2 gap-12 text-center">
+                    <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-red-500">
+                        <span class="text-6xl" role="img" aria-label="Error">❌</span>
+                        <h3 class="mt-4 text-2xl font-semibold text-primary">Báscula Tradicional</h3>
+                        <p class="mt-2 text-lg text-gray-600">Solo te da un número general. La balanza tradicional te miente porque no distingue entre grasa, músculo y agua.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-accent">
+                        <span class="text-6xl" role="img" aria-label="Check">✅</span>
+                        <h3 class="mt-4 text-2xl font-semibold text-primary">Tecnología Bioimpedancia</h3>
+                        <p class="mt-2 text-lg text-gray-600">Desglosamos tu peso en 9 componentes vitales para entender tu estado de salud **real** y preciso.</p>
+                    </div>
+                </div>
+                <p class="mt-10 text-center text-xl font-medium">
+                    En **Metabolismo 360**, no adivinamos. Medimos con precisión científica.
+                </p>
+            </div>
+        </section>
+
+        <!-- 4. SECCIÓN DE SERVICIO: "¿Qué medimos?" -->
+        <section class="py-20 sm:py-32">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center text-primary mb-16">
+                    Tu Reporte de Salud Integral: 9 Parámetros Clave
+                </h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Parámetro 1-3 -->
+                    <div class="p-6 bg-gray-50 rounded-lg shadow-md text-center">
+                        <p class="text-5xl text-accent mb-3" role="img">💪</p>
+                        <h4 class="font-bold text-lg">Masa Muscular</h4>
+                        <p class="text-sm text-gray-600">El motor de tu metabolismo y tu fuerza vital.</p>
+                    </div>
+                    <div class="p-6 bg-gray-50 rounded-lg shadow-md text-center">
+                        <p class="text-5xl text-accent mb-3" role="img">🩺</p>
+                        <h4 class="font-bold text-lg">Grasa Visceral</h4>
+                        <p class="text-sm text-gray-600">El indicador más importante de riesgo cardíaco y metabólico.</p>
+                    </div>
+                    <div class="p-6 bg-gray-50 rounded-lg shadow-md text-center">
+                        <p class="text-5xl text-accent mb-3" role="img">🔥</p>
+                        <h4 class="font-bold text-lg">Edad Metabólica</h4>
+                        <p class="text-sm text-gray-600">¿Qué edad tiene tu cuerpo por dentro realmente? Sorpréndete.</p>
+                    </div>
+                    <!-- Parámetro 4-6 -->
+                    <div class="p-6 bg-gray-50 rounded-lg shadow-md text-center">
+                        <p class="text-5xl text-accent mb-3" role="img">💧</p>
+                        <h4 class="font-bold text-lg">Hidratación (Agua)</h4>
+                        <p class="text-sm text-gray-600">Niveles de agua en tu organismo, vital para la función cerebral.</p>
+                    </div>
+                    <div class="p-6 bg-gray-50 rounded-lg shadow-md text-center">
+                        <p class="text-5xl text-accent mb-3" role="img">🦴</p>
+                        <h4 class="font-bold text-lg">Masa Ósea</h4>
+                        <p class="text-sm text-gray-600">Estado de tu salud esqueletal y densidad.</p>
+                    </div>
+                    <div class="p-6 bg-gray-50 rounded-lg shadow-md text-center">
+                        <p class="text-5xl text-accent mb-3" role="img">📈</p>
+                        <h4 class="font-bold text-lg">Tasa Metabólica Basal (TMB)</h4>
+                        <p class="text-sm text-gray-600">Cuántas calorías quemas en estado de reposo.</p>
+                    </div>
+                     <!-- Parámetro 7-9 -->
+                    <div class="p-6 bg-gray-50 rounded-lg shadow-md text-center">
+                        <p class="text-5xl text-accent mb-3" role="img">👤</p>
+                        <h4 class="font-bold text-lg">% Grasa Corporal</h4>
+                        <p class="text-sm text-gray-600">El porcentaje real de tejido adiposo total.</p>
+                    </div>
+                    <div class="p-6 bg-gray-50 rounded-lg shadow-md text-center">
+                        <p class="text-5xl text-accent mb-3" role="img">🏃</p>
+                        <h4 class="font-bold text-lg">Complexión Física</h4>
+                        <p class="text-sm text-gray-600">Evaluación de tu estructura corporal general.</p>
+                    </div>
+                    <div class="p-6 bg-gray-50 rounded-lg shadow-md text-center">
+                        <p class="text-5xl text-accent mb-3" role="img">🔢</p>
+                        <h4 class="font-bold text-lg">Peso Total</h4>
+                        <p class="text-sm text-gray-600">El dato final, ahora puesto en su contexto real.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. SECCIÓN DE CONFIANZA: "La Experiencia" -->
+        <section class="bg-white py-20 sm:py-32">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center text-primary mb-16">
+                    Una experiencia cómoda, privada y rápida.
+                </h2>
+                <div class="grid md:grid-cols-3 gap-10">
+                    <div class="text-center p-6">
+                        <span class="text-5xl text-primary" role="img" aria-label="Sin Agujas">🛡️</span>
+                        <h3 class="mt-4 text-xl font-semibold">Sin Pinchazos. Sin Invasión.</h3>
+                        <p class="mt-2 text-gray-600">La tecnología funciona por contacto seguro a través de manos y pies. Es completamente indoloro y confiable.</p>
+                    </div>
+                    <div class="text-center p-6">
+                        <span class="text-5xl text-primary" role="img" aria-label="Resultados al instante">⏱️</span>
+                        <h3 class="mt-4 text-xl font-semibold">Resultados en 3 Minutos</h3>
+                        <p class="mt-2 text-gray-600">Tu perfil corporal completo estará listo al instante. Ideal para gente con prisa.</p>
+                    </div>
+                    <div class="text-center p-6">
+                        <span class="text-5xl text-primary" role="img" aria-label="Interpretación">👩‍⚕️</span>
+                        <h3 class="mt-4 text-xl font-semibold">Asesoría Confidencial</h3>
+                        <p class="mt-2 text-gray-600">Un Coach de Bienestar certificado te explicará tus números para trazar un plan de acción.</p>
+                    </div>
+                </div>
+                <div class="mt-16 text-center">
+                    <button onclick="redirectToWhatsApp()" class="cta-button bg-primary text-white font-extrabold text-lg py-4 px-10 rounded-xl shadow-xl hover:bg-gray-700">
+                        QUIERO CONOCER MI COMPOSICIÓN HOY
+                    </button>
+                </div>
+            </div>
+        </section>
+
+         <!-- 6. SECCIÓN "SOBRE EL EXPERTO" (Tu Marca Personal) -->
+        <section id="experto" class="py-20 sm:py-32 bg-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-10 items-center">
+                <!-- Tu foto (Placeholder) -->
+                <div class="md:col-span-1 flex justify-center">
+                    <img src="https://placehold.co/300x300/68D391/0A3D62?text=FOTO+PROFESIONAL+TUYA" alt="Coach de Bienestar - Metabolismo 360" class="rounded-full w-64 h-64 object-cover shadow-2xl border-4 border-white">
+                </div>
+                <!-- Texto -->
+                <div class="md:col-span-2">
+                    <h2 class="text-3xl font-bold text-primary">Tu Coach de Bienestar, [Tu Nombre]</h2>
+                    <h3 class="text-xl font-semibold text-accent mt-2">Especialista Certificado en Bioimpedancia</h3>
+                    <p class="mt-4 text-lg text-gray-700">
+                        "Mi misión en **Metabolismo 360** es ayudarte a entender tu cuerpo más allá de las dietas de moda. Utilizo datos precisos para que tomes decisiones inteligentes sobre tu nutrición. Mi objetivo no es solo que te veas bien, sino que tus números internos reflejen una salud óptima y duradera."
+                    </p>
+                    <div class="mt-6">
+                        <button onclick="redirectToWhatsApp()" class="cta-button bg-accent text-primary font-semibold py-3 px-6 rounded-lg hover-bg-accent">
+                            Hablemos por WhatsApp
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 7. LLAMADO A LA ACCIÓN FINAL (FOOTER CTA) -->
+        <section class="bg-primary py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-extrabold text-white">
+                    Deja de adivinar y empieza a mejorar.
+                </h2>
+                <p class="mt-4 text-xl text-gray-200">
+                    Agenda tu Escáner de Composición Corporal de cortesía y comienza tu cambio hoy.
+                </p>
+                <div class="mt-8">
+                    <button onclick="redirectToWhatsApp()" class="cta-button bg-accent text-primary font-extrabold text-2xl py-5 px-12 rounded-xl shadow-2xl hover-bg-accent">
+                        RESERVAR ESCÁNER DE CORTESÍA AHORA
+                    </button>
+                    <p class="mt-3 text-sm text-gray-300">
+                        *Cupos limitados por día para asegurar atención personalizada.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 8. PIE DE PÁGINA (Footer) -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 text-sm">
+                <div>
+                    <h3 class="text-lg font-bold mb-2">METABOLISMO 360</h3>
+                    <p>Centro de Evaluación de Bienestar y Nutrición.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-2">Contacto</h3>
+                    <p>📍 [Tu Dirección Aquí]</p>
+                    <p>📧 [Tu Email Aquí]</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-2">Legal</h3>
+                    <p class="mt-2 text-gray-400">
+                        *Los resultados del escáner son una guía de bienestar y composición corporal. No constituyen un diagnóstico médico clínico para tratamiento de patologías. Recomendamos siempre consultar con su médico de cabecera.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Función para redirigir a WhatsApp con el mensaje predefinido
+        function redirectToWhatsApp() {
+            // Número de WhatsApp (debes reemplazar XXXX con tu número)
+            const phoneNumber = "XXXXXXXXXX"; // Reemplaza con tu número de teléfono (ej. 525512345678)
+
+            // Mensaje automático URL-codificado
+            const message = "Hola, vengo de la página web y me gustaría agendar mi Escáner Corporal de cortesía. ¿Tienen disponibilidad para una evaluación?";
+            const encodedMessage = encodeURIComponent(message);
+
+            // Crea el enlace de WhatsApp
+            const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+            // Redirige
+            window.open(whatsappLink, '_blank');
+        }
+
+        // Simulación de carga de contenido dinámico si fuera necesario
+        window.onload = function() {
+            console.log("Página de Metabolismo 360 cargada y lista.");
+        };
+
+    </script>
+
+</body>
+</html>
