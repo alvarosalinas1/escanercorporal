@@ -6,6 +6,7 @@
     <title>Metabolismo 360 - Tu Escáner Corporal Profesional</title>
     <!-- Carga de Tailwind CSS para un diseño limpio y profesional -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Carga la fuente Roboto para un aspecto moderno -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         /* Definición de colores base */
@@ -28,7 +29,7 @@
         .header-shadow {
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
-        /* Animación simple para los botones */
+        /* Animación simple para los botones CTA */
         .cta-button {
             transition: transform 0.2s, box-shadow 0.2s;
         }
@@ -71,7 +72,7 @@
                         *Oferta de cortesía válida solo por tiempo limitado.
                     </p>
                 </div>
-                <!-- Placeholder de imagen tecnológica y profesional -->
+                <!-- Placeholder de imagen tecnológica y profesional (Asegúrate de cambiar esta URL) -->
                 <div class="mt-16">
                      <img src="https://placehold.co/800x400/0A3D62/FFFFFF?text=IMAGEN+DE+TECNOLOG%C3%8DA+O+B%C3%81SCULA+DE+BIOIMPEDANCIA" alt="Imagen de tecnología de bioimpedancia" class="rounded-xl shadow-2xl mx-auto">
                 </div>
@@ -116,7 +117,8 @@
                         <p class="text-sm text-gray-600">El motor de tu metabolismo y tu fuerza vital.</p>
                     </div>
                     <div class="p-6 bg-gray-50 rounded-lg shadow-md text-center">
-                        <p class="text-5xl text-accent mb-3" role="img">🩺</p>
+                        <!-- Icono Corregido: Advertencia (Visceral Fat Risk) -->
+                        <p class="text-5xl text-red-500 mb-3" role="img">⚠️</p>
                         <h4 class="font-bold text-lg">Grasa Visceral</h4>
                         <p class="text-sm text-gray-600">El indicador más importante de riesgo cardíaco y metabólico.</p>
                     </div>
@@ -132,6 +134,7 @@
                         <p class="text-sm text-gray-600">Niveles de agua en tu organismo, vital para la función cerebral.</p>
                     </div>
                     <div class="p-6 bg-gray-50 rounded-lg shadow-md text-center">
+                        <!-- Icono Mantenido: Hueso (Masa Ósea) - Es el más preciso -->
                         <p class="text-5xl text-accent mb-3" role="img">🦴</p>
                         <h4 class="font-bold text-lg">Masa Ósea</h4>
                         <p class="text-sm text-gray-600">Estado de tu salud esqueletal y densidad.</p>
@@ -169,7 +172,8 @@
                 </h2>
                 <div class="grid md:grid-cols-3 gap-10">
                     <div class="text-center p-6">
-                        <span class="text-5xl text-primary" role="img" aria-label="Sin Agujas">🛡️</span>
+                        <!-- Icono Corregido: Mano Abierta (Non-Invasive Contact) -->
+                        <span class="text-5xl text-primary" role="img" aria-label="Sin Agujas">🖐️</span>
                         <h3 class="mt-4 text-xl font-semibold">Sin Pinchazos. Sin Invasión.</h3>
                         <p class="mt-2 text-gray-600">La tecnología funciona por contacto seguro a través de manos y pies. Es completamente indoloro y confiable.</p>
                     </div>
@@ -195,7 +199,7 @@
          <!-- 6. SECCIÓN "SOBRE EL EXPERTO" (Tu Marca Personal) -->
         <section id="experto" class="py-20 sm:py-32 bg-gray-100">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-10 items-center">
-                <!-- Tu foto (Placeholder) -->
+                <!-- Tu foto (Placeholder - Recuerda cambiar esta URL) -->
                 <div class="md:col-span-1 flex justify-center">
                     <img src="https://placehold.co/300x300/68D391/0A3D62?text=FOTO+PROFESIONAL+TUYA" alt="Coach de Bienestar - Metabolismo 360" class="rounded-full w-64 h-64 object-cover shadow-2xl border-4 border-white">
                 </div>
@@ -247,6 +251,7 @@
                 </div>
                 <div>
                     <h3 class="text-lg font-bold mb-2">Contacto</h3>
+                    <!-- Información de contacto mantenida según tu última edición -->
                     <p>📍 Av. Apoquindo 4499</p>
                     <p>📧 alvarosalinas.hbl@gmail.com</p>
                 </div>
@@ -257,14 +262,17 @@
                     </p>
                 </div>
             </div>
+            <p class="text-center text-xs mt-8 text-gray-500">
+                **NOTA DE DESPLIEGUE:** Si ves un error 404 en GitHub Pages, verifica que el archivo "index.html" esté en la raíz del repositorio y dale unos minutos al servidor para que termine de publicar la página.
+            </p>
         </div>
     </footer>
 
     <script>
         // Función para redirigir a WhatsApp con el mensaje predefinido
         function redirectToWhatsApp() {
-            // Número de WhatsApp (debes reemplazar XXXX con tu número)
-            const phoneNumber = "+56981590912"; // Reemplaza con tu número de teléfono (ej. 525512345678)
+            // Número de WhatsApp (Incluyendo código de país, sin el signo "+")
+            const phoneNumber = "56981590912"; // Número de Álvaro Salinas
 
             // Mensaje automático URL-codificado
             const message = "Hola, vengo de la página web y me gustaría agendar mi Escáner Corporal de cortesía. ¿Tienen disponibilidad para una evaluación?";
@@ -277,7 +285,6 @@
             window.open(whatsappLink, '_blank');
         }
 
-        // Simulación de carga de contenido dinámico si fuera necesario
         window.onload = function() {
             console.log("Página de Metabolismo 360 cargada y lista.");
         };
