@@ -1,655 +1,116 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8"> 
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transformación 360° | Programa de Bienestar y Liderazgo</title>
-    <!-- Incluimos una fuente limpia y elegante de Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
-    
-    <!-- CSS AGREGADO AQUÍ PARA DEFINIR LA IMAGEN DE FONDO DEL HERO Y LOS NUEVOS COLORES DE SECCIÓN -->
+    <title>Metabolismo 360</title>
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Variables y Base Styling */
-        :root {
-            --color-primary: #E27138; /* Naranja fuerte */
-            --color-secondary: #769E94; /* Verde Menta */
-            --color-bg-light: #f5f5f5; /* Gris claro */
-            --color-text-dark: #2c3e50;
-            --color-text-light: #ffffff;
-            --color-moss-green: #aed581; /* Verde Musgo Claro para el marco */
-        }
-
+        /* Configuración de fuente Inter para toda la página */
         body {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--color-text-dark);
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-
-        .section {
-            padding: 40px 20px;
-        }
-
-        /* --- Secciones con nuevos colores de fondo --- */
-        .section-f5 {
-            background-color: var(--color-bg-light);
-            color: var(--color-text-dark);
-        }
-        .section-orange {
-            background-color: var(--color-primary);
-            color: var(--color-text-light);
-        }
-        .section-mint {
-            background-color: var(--color-secondary);
-            color: var(--color-text-light);
-        }
-
-        /* --- HERO SECTION BASE (IMAGEN + GRADIENTE) --- */
-        .hero-section, .section-price-hero {
-            /* Usamos un placeholder para la imagen de fondo */
-            background-image: linear-gradient(rgba(226, 113, 56, 0.8), rgba(226, 113, 56, 0.8)), url('https://placehold.co/1920x1080/E27138/ffffff?text=Hero+Image');
-            background-size: cover;
-            background-position: center;
-            color: var(--color-text-light);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            min-height: 50vh; 
-        }
-
-        .hero-content {
-            padding: 20px;
-            max-width: 900px;
-        }
-        
-        h1 { font-size: 2.2rem; font-weight: 900; margin-bottom: 20px; line-height: 1.2; }
-        h2 { font-size: 1.8rem; font-weight: 800; margin-bottom: 20px; text-align: center; }
-        .subtitle { font-size: 1.1rem; opacity: 0.9; }
-
-        /* --- ESTILOS DE BOTONES (CTAs) Y ANIMACIÓN POP-UP --- */
-        .cta-button {
-            display: block;
-            width: 90%;
-            max-width: 450px;
-            margin: 20px auto;
-            padding: 15px 20px;
-            border-radius: 50px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            text-decoration: none;
-            text-transform: uppercase;
-            /* Sombra difuminada */
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-            transition: all 0.2s ease-out;
-            border: none;
-            cursor: pointer;
-        }
-        /* Animación Pop-up Suave */
-        .cta-button.cta-animated:hover, .cta-button.cta-animated:active {
-            transform: scale(1.03); /* Ligeramente más grande */
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
-        }
-        /* Color para Bloque 1 (Hero) y 6 (Liderazgo) - Contraste con Naranja/Gris */
-        .cta-primary {
-            background-color: #2ecc71; /* Verde brillante */
-            color: var(--color-text-light);
-        }
-        /* Color para Bloque 2 (Resultados) y 4 (Precio) - Contraste con Gris/Naranja */
-        .cta-secondary {
-            background-color: #3498db; /* Azul */
-            color: var(--color-text-light);
-        }
-        .cta-tertiary {
-            background-color: #f39c12; /* Amarillo/Dorado */
-            color: var(--color-text-dark);
-        }
-        /* Nuevo estilo para botón de METABOLISMO 360 (Vibrante) */
-        .cta-results-metabolismo {
-            background-color: var(--color-primary); /* Naranja Fuerte */
-            color: var(--color-text-light); /* Texto Blanco */
-            font-weight: 900;
-            letter-spacing: 0.5px;
-            font-size: 1.3rem; /* Ligeramente más grande */
-            border: 3px solid #fff; /* Borde blanco para contraste */
-        }
-        /* Nuevo estilo para botón de Instagram */
-        .cta-instagram {
-            background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
-            color: var(--color-text-light);
-        }
-        
-        /* Estilo para el texto small-print y negrita */
-        .small-print {
-            font-size: 0.9rem;
-            margin-top: -10px;
-            margin-bottom: 20px;
-            font-weight: 400;
-        }
-        .small-print strong {
-            font-weight: 700;
-        }
-
-        /* --- MARCO DE BENEFICIOS --- */
-        .benefits-header {
-            background-color: var(--color-moss-green);
-            color: var(--color-text-dark);
-            padding: 15px 20px;
-            border: 3px double var(--color-text-dark); /* Doble orilla */
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 1.2rem;
-            margin: 0 auto 20px;
-            max-width: 90%;
-            text-align: center;
-        }
-        /* --- LISTA DE BENEFICIOS (BLOQUE 3) --- */
-        .benefits-list {
-            max-width: 600px;
-            margin: 0px auto;
-            text-align: center;
-        }
-        .benefits-list ul {
-            list-style: none;
-            padding: 0;
-            margin-top: 20px;
-            text-align: left; 
-            width: 100%;
-        }
-        .benefits-list ul li {
-            margin-bottom: 10px;
-            font-size: 1.1rem;
-            line-height: 1.4;
-        }
-        .benefits-list ul li span {
-             margin-right: 8px; /* Espacio para el checkmark */
-             color: #2ecc71; /* Color verde para el check */
-             font-weight: 700;
-        }
-
-        /* --- CARRUSEL Y FLECHAS ANIMADAS (BLOQUE 2) --- */
-        .carousel-container {
-            position: relative;
-            max-width: 800px;
-            margin: 30px auto;
-            overflow: hidden;
-            padding: 10px 0;
-        }
-        .carousel {
-            display: flex;
-            animation: slide 30s linear infinite; /* Animación de deslizamiento infinito */
-            width: max-content; /* Permite que el contenido se extienda */
-        }
-        .carousel-item {
-            flex-shrink: 0;
-            margin-right: 15px;
-            width: 120px;
-            height: 120px;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
-        .carousel-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        @keyframes slide {
-            from { transform: translateX(0); }
-            to { transform: translateX(-50%); } /* Se desliza la mitad para que sea un loop infinito */
-        }
-
-        .arrow-animation {
-            text-align: center;
-            margin: 20px 0;
-            height: 40px;
-            line-height: 1;
-        }
-        .arrow-animation span {
-            display: inline-block;
-            font-size: 2rem;
-            color: var(--color-primary);
-            animation: move-up-down 1.5s infinite alternate;
-            margin: 0 5px;
-        }
-        .arrow-animation span:nth-child(2) { animation-delay: 0.2s; }
-        .arrow-animation span:nth-child(3) { animation-delay: 0.4s; }
-
-        @keyframes move-up-down {
-            from { transform: translateY(10px); opacity: 0.5; }
-            to { transform: translateY(-10px); opacity: 1; }
-        }
-
-        /* --- OTROS ESTILOS (Precio, Infograma, Historia) --- */
-        .original-price { font-size: 1.5rem; text-decoration: line-through; opacity: 0.7; display: block; margin-bottom: 5px; font-weight: 400; }
-        .discount-highlight { font-size: 3rem; font-weight: 900; margin: 0; line-height: 1.2; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); }
-        .infogram-container { background-color: #ffffff; color: var(--color-text-dark); padding: 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); margin: 20px auto 30px; max-width: 95%; }
-        .infogram-problem { color: #c0392b; }
-        .infogram-solution { font-weight: 900; color: #27ae60; }
-        .gallery-grid { display: grid; gap: 20px; padding: 20px 0; max-width: 1000px; margin: 0 auto; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
-        /* Usamos placeholders para las imágenes de resultados */
-        .result-card img { 
-            width: 100%; 
-            height: auto; 
-            border-radius: 10px; 
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-            /* Placeholder: Si no se encuentra la imagen, muestra un placeholder. Usamos el verde menta de fondo. */
-            background-color: var(--color-secondary);
-        }
-        .story-content { max-width: 800px; margin: 0 auto; text-align: center; }
-        .profile-photo { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; border: 5px solid var(--color-text-light); }
-        .countdown { font-size: 2.5rem; font-weight: 900; margin: 20px auto; color: #f1c40f; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); max-width: 300px; }
-        
-        /* --- FOOTER RESTAURADO --- */
-        .footer { 
-            padding: 20px; 
-            text-align: center; 
-            background-color: var(--color-bg-light); 
-            color: var(--color-text-dark); 
-            font-size: 0.9rem; 
-            margin-top: 30px; 
-        }
-        .footer a { color: var(--color-primary); text-decoration: none; }
-
-
-        /* --- MODAL (GALERÍA POP-UP) --- */
-        .modal-overlay {
-            display: none; /* Oculto por defecto */
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow-y: auto; 
-            background-color: rgba(0, 0, 0, 0.9);
-            justify-content: center;
-            align-items: flex-start; 
-            padding-top: 20px;
-            padding-bottom: 20px;
-        }
-        .modal-content {
-            background-color: #fff;
-            margin: 20px auto; 
-            padding: 20px;
-            border-radius: 10px;
-            width: 90%;
-            max-width: 1000px;
-            position: relative;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-            max-height: 95vh; 
-            overflow-y: auto; 
-        }
-        .modal-gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-        .modal-gallery-grid .result-card {
-            text-align: center;
-        }
-        .modal-gallery-grid .result-card p.caption {
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-top: 5px;
-            color: var(--color-text-dark);
-        }
-        .close-button {
-            position: absolute;
-            top: 15px;
-            right: 25px;
-            color: #aaa;
-            font-size: 40px;
-            font-weight: bold;
-            cursor: pointer;
-            border: none;
-            background: none;
-        }
-        .close-button:hover,
-        .close-button:focus {
-            color: #333;
-            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
         }
     </style>
-    
-    <!-- ⚠️ AQUÍ DEBES PEGAR TUS CÓDIGOS DE SEGUIMIENTO -->
-    
 </head>
-<body>
+<body class="p-4 sm:p-8">
 
-    <!-- BLOQUE 1 (HERO) - Contenido Principal, Centrado, CTA Principal -->
-    <header class="hero-section section">
-        <div class="hero-content">
-            
-            <!-- H1 PRINCIPAL -->
-            <h1>Despierta tu Energía y Logra tu Peso Ideal: Asesoría Nutricional y Ejercicio.</h1>
-            
-            <!-- TEXTO ASESORÍA -->
-            <p class="advisor-text">Te Asesoramos en Todo Tu Proceso</p>
+    <!-- Contenedor Principal (Simula la página "Metabolismo 360") -->
+    <div class="max-w-4xl mx-auto bg-white p-6 sm:p-10 rounded-xl shadow-2xl border border-gray-100">
 
-            <!-- INFOGRAMA VISUAL (Solo texto destacado) -->
-            <div class="infogram-container" style="max-width: 700px;">
-                <p class="infogram-problem">¿Quieres mejorar tu <strong>bienestar</strong>, pero no sabes por dónde empezar?</p>
-                <p class="infogram-solution">¡Tenemos la <strong>SOLUCIÓN!</strong> Un sistema <strong>COMPROBADO</strong> para transformar tu cuerpo y energía</p>
-            </div>
-            
-            <!-- BOTÓN CTA 1 -->
-            <a href="https://api.whatsapp.com/send?phone=56981590912&text=Hola,%20quiero%20iniciar%20mi%20plan%20de%20Transformación%20ahora!" class="cta-button cta-primary cta-animated">
-                Quiero iniciar mi plan de Transformación ⭐
-            </a>
-            
-        </div>
-    </header>
+        <!-- Encabezado -->
+        <header class="text-center mb-10 border-b pb-5">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-blue-800 tracking-tight">Metabolismo 360°</h1>
+            <p class="mt-2 text-xl text-gray-500">Un enfoque integral para tu bienestar y energía.</p>
+        </header>
 
-    <!-- BLOQUE 2 - RESULTADOS Y PROGRAMA - Fondo Gris Claro -->
-    <section class="section section-f5">
-        
-        <!-- 2.1 SECCIÓN DE RESULTADOS -->
-        <h2>Resultados Reales. Historias Inspiradoras.</h2>
-        <p class="subtitle" style="text-align: center;">Descubre el poder de la consistencia. Estos son solo algunos de los resultados que alcanzarás en salud y físico.</p>
-        
-        <div class="gallery-grid">
-            <!-- RESULTADOS INICIALES (3 IMÁGENES COMBINADAS - Usando Placeholders) -->
-            <div class="result-card"><img src="https://placehold.co/200x200/E27138/ffffff?text=Resultado+1" alt="Transformación Antes y Después 1"><p class="caption">¡Baja de peso y aumenta la vitalidad!</p></div>
-            <div class="result-card"><img src="https://placehold.co/200x200/769E94/ffffff?text=Resultado+2" alt="Transformación Antes y Después 2"><p class="caption">Adiós a la grasa, hola a la energía.</p></div>
-            <div class="result-card"><img src="https://placehold.co/200x200/aed581/2c3e50?text=Resultado+3" alt="Transformación Antes y Después 3"><p class="caption">Transformación completa de cuerpo y mente.</p></div>
-        </div>
-        
-        <!-- BOTÓN PARA ABRIR LA GALERÍA MODAL - ¡ACTUALIZADO CON NUEVO TEXTO Y ESTILO! -->
-        <button id="openModalBtn" class="cta-button cta-results-metabolismo cta-animated" style="margin-top: 10px;">
-            Quiero ver resultados de METABOLISMO 360
-        </button>
-        
-        <!-- Flechas Animadas (REUBICADAS DEBAJO DEL BOTÓN) -->
-        <div class="arrow-animation">
-            <span>&#9650;</span>
-            <span>&#9650;</span>
-            <span>&#9650;</span>
+        <!-- Sección de Contenido Principal -->
+        <section class="space-y-6 text-gray-700">
+            <h2 class="text-2xl font-bold text-blue-700">La Base de Nuestra Salud</h2>
+            <p class="leading-relaxed">
+                El metabolismo es el conjunto de procesos químicos que ocurren en las células de nuestro cuerpo para convertir los alimentos en energía. Es mucho más que solo quemar calorías; es la clave para la regulación hormonal, la regeneración celular y la vitalidad general. Nuestro programa Metabolismo 360° aborda este sistema desde una perspectiva completa.
+            </p>
+
+            <h2 class="text-2xl font-bold text-blue-700 pt-4">Nuestros Pilares</h2>
+            <ul class="list-disc list-inside space-y-2 ml-4">
+                <li><strong class="font-semibold">Nutrición Personalizada:</strong> Dietas basadas en tus necesidades metabólicas específicas.</li>
+                <li><strong class="font-semibold">Actividad Física Inteligente:</strong> Rutinas que optimizan la quema de grasa y la construcción muscular.</li>
+                <li><strong class="font-semibold">Manejo del Estrés:</strong> Técnicas para reducir el cortisol, una hormona que impacta negativamente el metabolismo.</li>
+                <li><strong class="font-semibold">Sueño de Calidad:</strong> La importancia del descanso para la reparación y el equilibrio hormonal.</li>
+            </ul>
+
+            <p class="leading-relaxed mt-6">
+                Creemos que al armonizar estos cuatro pilares, puedes desbloquear tu máximo potencial energético y alcanzar un estado de salud sostenible.
+            </p>
+        </section>
+
+        <!-- Separador y Botón Solicitado -->
+        <div class="my-10 border-t pt-8 text-center">
+            <!-- El botón solicitado que activa la galería -->
+            <button id="toggleButton" onclick="toggleGallery()" 
+                    class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-green-300">
+                Mostrar Imágenes
+            </button>
         </div>
 
-        <!-- Carrusel de resultados pequeños -->
-        <div class="carousel-container">
-            <!-- Duplicar el contenido para un loop infinito suave -->
-            <div class="carousel" id="results-carousel">
-                <!-- Se poblará con JS al cargar la página -->
-            </div>
-        </div>
-
-        <!-- 2.2 SECCIÓN DEL PROGRAMA -->
-        <h2 style="margin-top: 40px;">Tu Transformación Comienza Hoy: Esto Incluye Tu Plan</h2>
-        <div class="program-grid">
-            <div class="program-item">
-                <h3>Plataforma Online Premium</h3>
-                <p>Acceso 24/7 a ejercicios funcionales, rutinas de fuerza y cardio, adaptables a todos los niveles.</p>
-            </div>
-            <div class="program-item">
-                <h3>Recetario y Nutrición</h3>
-                <p>Cientos de recetas saludables y deliciosas, diseñadas por expertos para que alcances tu peso ideal sin dietas restrictivas.</p>
-            </div>
-            <div class="program-item">
-                <h3>Clases de Nutrición Online</h3>
-                <p>Clases semanales en vivo y grabadas con nuestros mentores para que aprendas a comer y domines la nutrición.</p>
-            </div>
-            <div class="program-item">
-                <h3>Comunidad de Mentores</h3>
-                <p>Forma parte de nuestra comunidad de bienestar, con guía constante, apoyo y responsabilidad de líderes en el camino hacia tu mejor versión</p>
-            </div>
-        </div>
-
-        <!-- BOTÓN CTA 2 -->
-        <a href="https://api.whatsapp.com/send?phone=56981590912&text=Hola,%20quiero%20obtener%20mi%20propio%20resultado%20como%20los%20que%20vi%20en%20la%20página." class="cta-button cta-secondary cta-animated">
-            Quiero mi propio resultado
-        </a>
-    </section>
-    
-    <!-- BLOQUE 3 - URGENCIA Y BENEFICIOS - Fondo Naranja #E27138 -->
-    <section class="section section-orange">
-        <div class="hero-content" style="padding: 0;">
-            
-            <!-- CONTADOR DE URGENCIA Y OFERTA (CENTRADOS) -->
-            <div class="urgency-box">
-                <p class="urgency-text" style="color: #fff;">OFERTA DISPONIBLE por tiempo limitado</p>
-                <div class="countdown" id="countdown"></div> <!-- RELOJ CENTRADO -->
-                <p class="bonus-text">Compra ahora y accede a <strong>1 Clase Gratuita de Ejercicios</strong> y <strong>4 Clases Gratuitas de Nutrición</strong> presencial.</p>
-            </div>
-            
-            <!-- LISTA DE ALTO VALOR (CENTRALIZADA CON ÍTEMS A LA IZQUIERDA) -->
-            <div class="benefits-list">
-                <!-- Marco con Doble Orilla y Fondo Verde Musgo -->
-                <p class="benefits-header">Esto es lo que obtienes con tu plan PROBADO para resultados reales:</p>
+        <!-- Galería de Imágenes (Inicialmente oculta) -->
+        <div id="imageGallery" class="hidden mt-8 transition-all duration-500 ease-in-out">
+            <h3 class="text-2xl font-bold text-center mb-6 text-gray-800">Galería de Conceptos Clave</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 
-                <ul>
-                    <!-- Se reintroducen los checkmarks como span para estilizar -->
-                    <li><span>✅</span> <strong>PLAN PROBADO:</strong> Garantizado para bajar en promedio <strong>2 a 3 kg por semana.</strong></li>
-                    <li><span>✅</span> <strong>24/7 Plataforma Nutricional:</strong> Recetas saludables, rutinas de ejercicios profesionales, <strong>actualizadas mes a mes.</strong></li>
-                    <li><span>✅</span> <strong>Asesor con Atención Personalizada:</strong> Soporte directo para resolver dudas y optimizar tu progreso.</li>
-                    <li><span>✅</span> <strong>Reto Exclusivo de 21 Días:</strong> Incorporación inmediata a nuestra comunidad para asegurar resultados físicos rápidos y en grupo.</li>
-                    <li><span>✅</span> <strong>Scanner de Bioimpedancia:</strong> Medición de grasa y músculo valorada en <strong>$50.000 CLP</strong> (incluido sin costo extra).</li>
-                    <li><span>✅</span> <strong>Cursos Online de Nutrición en Vivo:</strong> Clases semanales por Zoom para que aprendas a comer y domines la nutrición.</li>
-                    <li><span>✅</span> <strong>Suministro de Suplementos Nutricionales:</strong> El soporte de nutrientes esencial para acelerar tu metabolismo y energía.</li>
-                    <li><span>✅</span> <strong>Aplicación de Rutinas Profesionales:</strong> Acceso fácil a tus entrenamientos desde cualquier dispositivo.</li>
-                    <li><span>✅</span> <strong>Actividades Presenciales:</strong> Eventos para construir tu mejor versión y conectar con la comunidad.</li>
-                    <li><span>✅</span> Oxida la grasa, controla tu peso de forma guiada y <strong>sostenible.</strong></li>
-                    <li><span>✅</span> Mejora drásticamente tu digestión, aumenta tu energía y vitalidad diaria.</li>
-                    <li><span>✅</span> Optimiza tu enfoque, concentración y sistemas cognitivos.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+                <!-- Imagen 1: Nutrición -->
+                <div class="bg-gray-50 p-3 rounded-xl shadow-md transition duration-300 hover:shadow-xl">
+                    <img src="https://placehold.co/600x400/0f8a85/ffffff?text=Nutrición+Clave" 
+                         alt="Concepto de Nutrición" 
+                         class="w-full h-40 object-cover rounded-lg mb-3">
+                    <p class="text-sm text-center font-semibold text-gray-600">Balance Nutricional</p>
+                </div>
+                
+                <!-- Imagen 2: Ejercicio -->
+                <div class="bg-gray-50 p-3 rounded-xl shadow-md transition duration-300 hover:shadow-xl">
+                    <img src="https://placehold.co/600x400/9e0000/ffffff?text=Actividad+Física" 
+                         alt="Concepto de Actividad Física" 
+                         class="w-full h-40 object-cover rounded-lg mb-3">
+                    <p class="text-sm text-center font-semibold text-gray-600">Ejercicio y Energía</p>
+                </div>
 
-    <!-- BLOQUE 4 - REITERACIÓN DE PRECIO - Fondo Naranja/Imagen -->
-    <section class="section-price-hero section">
-        <div class="hero-content">
-             <!-- PRECIO DE REFERENCIA Y DESCUENTO -->
-            <div class="price-container">
-                <span class="original-price">VALOR NORMAL SOBRE $350.000 CLP</span>
-                <p class="discount-highlight">¡SOLO HOY $115.000 CLP!</p>
-            </div>
+                <!-- Imagen 3: Equilibrio -->
+                <div class="bg-gray-50 p-3 rounded-xl shadow-md transition duration-300 hover:shadow-xl">
+                    <img src="https://placehold.co/600x400/fca311/000000?text=Equilibrio+Total" 
+                         alt="Concepto de Equilibrio General" 
+                         class="w-full h-40 object-cover rounded-lg mb-3">
+                    <p class="text-sm text-center font-semibold text-gray-600">Bienestar Holístico</p>
+                </div>
 
-            <!-- BOTÓN CTA 3 -->
-            <a href="https://api.whatsapp.com/send?phone=56981590912&text=Hola,%20voy%20a%20aprovechar%20la%20promoción%20de%20$115.000%20CLP." class="cta-button cta-secondary cta-animated">
-                Voy a aprovechar la promoción 🔥
-            </a>
-            <!-- Se asegura que el texto entre asteriscos esté en negrita -->
-            <p class="small-print" style="color: #fff;">Haz clic para iniciar tu compra a través de WhatsApp. <strong>¡ENVÍO A TODO CHILE!</strong> Cupos Limitados.</p>
-        </div>
-    </section>
-
-    <!-- BLOQUE 5 - MI HISTORIA - Fondo Verde Menta #769E94 -->
-    <section class="section section-mint">
-        <div class="story-content">
-            <img src="https://placehold.co/150x150/2c3e50/ffffff?text=Mi+Foto" alt="Tu Foto de Perfil" class="profile-photo">
-            <h2>Mi Historia: De la Adicción a la Vitalidad</h2>
-            <p>Sé lo que es sentirse atrapado por la comida. Mi lucha no era solo por el peso; era la <strong>ansiedad de buscar galletas</strong> incluso cuando no quedaban, la <strong>vergüenza social</strong> de la mala digestión y, peor aún, los <strong>dolores abdominales paralizantes</strong> que me quitaban el aliento. Sabía que debía hacer ejercicio, pero mi cuerpo simplemente no tenía la <strong>energía</strong> para empezar.</p>
-            <p><strong>No es tu culpa.</strong> El problema no eres tú, es el sistema que aún no conoces.</p>
-            <p>Encontré una <strong>comunidad y un sistema activo</strong> que renovó mi vida. Mi transformación fue total: de la fatiga crónica a una <strong>explosión de energía</strong>, la digestión mejoró y mi <strong>confianza</strong> se disparó.</p>
-            <p>Mi pasión es el <strong>liderazgo</strong> y la <strong>enseñanza</strong>. Como padre, descubrí que guiar a otros a su mejor versión es mi mayor gratificación. Hoy, te ofrezco ese mismo camino. Si sueñas con esa <strong>vitalidad</strong> y estás listo para un <strong>desarrollo personal profundo</strong>, te guiaré con las herramientas que te harán <strong>independiente</strong> y exitoso. La <strong>confianza</strong> es la base de todo.</p>
-        </div>
-    </section>
-
-    <!-- BLOQUE 6 - LIDERAZGO Y FOOTER - Fondo Gris Claro -->
-    <section class="section section-f5">
-        <h2 style="margin-bottom: 30px;">Un Camino Que No Termina en Ti: Liderazgo y Desarrollo</h2>
-        <div class="leadership-grid">
-            <div class="leadership-item">
-                <h3>Impacta y Genera Ingresos</h3>
-                <p>Nuestra comunidad está llena de líderes. Si buscas desarrollo personal y la oportunidad de generar <strong>ingresos extras (CLP $100.000 - $300.000)</strong> ayudando a otros, este es tu lugar.</p>
-            </div>
-            <div class="leadership-item">
-                <h3>Aprendizaje de Habilidades</h3>
-                <p>Aumenta tu liderazgo, aprende sobre marketing, comunicación efectiva y virtud. Convierte tu éxito en bienestar en un negocio con propósito.</p>
             </div>
         </div>
 
-        <!-- BOTÓN DE INSTAGRAM SOLICITADO -->
-        <a href="https://www.instagram.com/alvarosalinas_hbl?igsh=MXh0Y2ZhYWhqcTFvdQ==" target="_blank" class="cta-button cta-animated cta-instagram">
-            ¡Sígueme en Instagram! 📸
-        </a>
-
-        <!-- BOTÓN CTA 4 -->
-        <a href="https://api.whatsapp.com/send?phone=56981590912&text=Hola,%20estoy%20lista%20para%20formarme%20como%20Coach%20de%20Bienestar%20y%20conocer%20la%20oportunidad%20de%20ingresos." class="cta-button cta-primary cta-animated">
-            ESTOY LISTA PARA FORMARME COMO COACH DE BIENESTAR
-        </a>
-
-        <!-- FOOTER (Estructura original restaurada) -->
-        <footer class="footer">
-            <p>&copy; 2025 Transformación 360°. Todos los derechos reservados.</p>
-            <p>Contacto: <a href="https://api.whatsapp.com/send?phone=56981590912">WhatsApp +56 9 8159 0912</a></p>
+        <!-- Pie de página -->
+        <footer class="mt-12 pt-5 border-t text-center text-sm text-gray-500">
+            © 2024 Programa Metabolismo 360°. Todos los derechos reservados.
         </footer>
-    </section>
 
-    <!-- ESTRUCTURA DEL MODAL (GALERÍA POP-UP) -->
-    <div id="resultsModal" class="modal-overlay">
-        <div class="modal-content">
-            <button class="close-button">&times;</button>
-            <h2 class="modal-title">¡40 Transformaciones Más!</h2>
-            <p class="subtitle" style="color: #666;">Inspírate con el poder de nuestro sistema.</p>
-            
-            <div class="modal-gallery-grid" id="modal-gallery">
-                <!-- Las imágenes se insertan dinámicamente aquí -->
-            </div>
-
-            <!-- CTA DENTRO DEL MODAL -->
-            <a href="https://api.whatsapp.com/send?phone=56981590912&text=Hola,%20vi%20la%20galer%C3%ADa%20completa%20y%20quiero%20comenzar%20mi%20plan%20ahora%20mismo!" class="cta-button modal-cta cta-secondary cta-animated">
-                ¡Quiero comenzar con mi plan ahora!
-            </a>
-        </div>
     </div>
 
-    <!-- Scripts -->
-    <!-- El script countdown.js es el que da vida al reloj -->
-    <script src="assets/js/countdown.js"></script>
+    <!-- Script para la funcionalidad del botón -->
     <script>
-        // CORRECCIÓN: Aumentamos el número total de resultados a 40 (del 4 al 43).
-        const totalResults = 40;
-        
-        // CORRECCIÓN: Lista de 40 frases de alto impacto.
-        const dynamicCaptions = [
-            "Adiós a la ansiedad por comer",
-            "Resultado en 21 días garantizado",
-            "Enfoque en tu nutrición celular",
-            "80% alimentación, 20% ejercicio",
-            "Recupera tu vitalidad perdida",
-            "Aumento de autoestima y confianza",
-            "Pérdida de peso sostenible",
-            "Rutinas de ejercicio para casa",
-            "Comunidad de apoyo y motivación",
-            "Metabolismo acelerado naturalmente",
-            "Mejora tu calidad de sueño",
-            "Desintoxicación y bienestar total",
-            "Clases de cocina saludable",
-            "Aprendizaje de por vida",
-            "Esculpe tu figura sin gimnasio",
-            "Transformación mental y física",
-            "Guía de suplementación experta",
-            "Resultados que se mantienen",
-            "Control de azúcar en la sangre",
-            "Piel radiante y cabello fuerte",
-            "Soporte personalizado 1 a 1",
-            "Programa apto para toda edad",
-            "Supera el estancamiento de peso",
-            "Aprende a amar el ejercicio",
-            "Alcanza tus metas fitness",
-            "Libérate de las dietas yo-yo",
-            "Energía para jugar con tus hijos",
-            "Cuerpo más fuerte y tonificado",
-            "Mejora drástica en digestión",
-            "Menos dolores articulares",
-            "Conviértete en tu mejor versión",
-            "Sistema activo y divertido",
-            "Clases de nutrición en vivo",
-            "Reto de transformación grupal",
-            "Fácil de seguir, grandes resultados",
-            "Controla tu apetito emocional",
-            "Vive sin culpa la comida",
-            "Motivación constante asegurada",
-            "El cambio que tu cuerpo pedía",
-            "Más energía desde el día 1" // 40th item
-        ];
+        /**
+         * Función para alternar la visibilidad de la galería de imágenes 
+         * y cambiar el texto del botón.
+         */
+        function toggleGallery() {
+            const gallery = document.getElementById('imageGallery');
+            const button = document.getElementById('toggleButton');
 
-        const resultsData = Array.from({ length: totalResults }, (_, i) => ({
-            // Los IDs de imagen irán de 4 a 43 (i + 4)
-            id: i + 4,
-            // Usamos el índice modular para las frases si hay más fotos que frases, aunque ya tenemos 40
-            caption: dynamicCaptions[i] || `Transformación ${i + 4}`
-        }));
+            // Alterna la clase 'hidden' para mostrar/ocultar
+            gallery.classList.toggle('hidden');
 
-        // Función para poblar la galería y el carrusel
-        function populateGalleries() {
-            const modalGallery = document.getElementById('modal-gallery');
-            const carousel = document.getElementById('results-carousel');
-            
-            if (!modalGallery || !carousel) {
-                console.error("No se encontraron los contenedores de galería o carrusel.");
-                return;
-            }
-
-            let carouselContent = '';
-            let modalContent = '';
-
-            // 1. Crear el contenido del Carrusel (Duplicado para loop infinito)
-            // Usamos solo los primeros 20 resultados para el carrusel para no sobrecargarlo visualmente
-            const carouselResults = resultsData.slice(0, 20); 
-            for (let k = 0; k < 2; k++) { // Duplicar para el loop
-                carouselResults.forEach(result => {
-                    carouselContent += `
-                        <div class="carousel-item">
-                            <img src="assets/images/resultado_${result.id}.jpg" alt="Resultado ${result.id}" 
-                                onerror="this.onerror=null; this.src='https://placehold.co/120x120/769E94/ffffff?text=Res${result.id}'">
-                        </div>
-                    `;
-                });
-            }
-            carousel.innerHTML = carouselContent;
-
-            // 2. Crear el contenido del Modal (Usamos todos los 40 resultados con captions dinámicos)
-            resultsData.forEach(result => {
-                modalContent += `
-                    <div class="result-card">
-                        <img src="assets/images/resultado_${result.id}.jpg" alt="Resultado ${result.id}"
-                            onerror="this.onerror=null; this.src='https://placehold.co/200x150/769E94/ffffff?text=Resultado%20${result.id}'">
-                        <p class="caption">${result.caption}</p>
-                    </div>
-                `;
-            });
-            modalGallery.innerHTML = modalContent;
-        }
-
-        // Lógica para el MODAL (POP-UP)
-        const modal = document.getElementById('resultsModal');
-        const openBtn = document.getElementById('openModalBtn');
-        const closeBtn = document.querySelector('#resultsModal .close-button'); // Apunta solo al botón dentro del modal
-
-        window.onload = function() {
-            populateGalleries(); // Poblar las galerías al cargar
-            
-            // Asegurar que los listeners estén adjuntos después de la carga
-            if (openBtn && modal && closeBtn) {
-                openBtn.addEventListener('click', function() {
-                    modal.style.display = 'flex'; // Abre el modal
-                    document.body.style.overflow = 'hidden'; // Evita el scroll del fondo
-                    // CORRECCIÓN: Aseguramos el scroll se vaya al inicio del contenido del modal
-                    const modalContent = document.querySelector('.modal-content');
-                    if (modalContent) {
-                        modalContent.scrollTop = 0;
-                    }
-                });
-
-                closeBtn.addEventListener('click', function() {
-                    modal.style.display = 'none'; // Cierra el modal
-                    document.body.style.overflow = 'auto'; // Restaura el scroll
-                });
-
-                window.addEventListener('click', function(event) {
-                    if (event.target === modal) {
-                        modal.style.display = 'none';
-                        document.body.style.overflow = 'auto';
-                    }
-                });
+            // Cambia el texto del botón según el estado actual
+            if (gallery.classList.contains('hidden')) {
+                button.textContent = 'Mostrar Imágenes';
             } else {
-                console.error("No se encontraron elementos esenciales del modal.");
+                button.textContent = 'Ocultar Imágenes';
             }
         }
     </script>
