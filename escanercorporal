@@ -201,7 +201,7 @@
                 </div>
                 <!-- Texto -->
                 <div class="md:col-span-2">
-                    <h2 class="text-3xl font-bold text-primary">Tu Coach de Bienestar, [Tu Nombre]</h2>
+                    <h2 class="text-3xl font-bold text-primary">Tu Coach de Bienestar, Álvaro Salinas</h2>
                     <h3 class="text-xl font-semibold text-accent mt-2">Especialista Certificado en Bioimpedancia</h3>
                     <p class="mt-4 text-lg text-gray-700">
                         "Mi misión en **Metabolismo 360** es ayudarte a entender tu cuerpo más allá de las dietas de moda. Utilizo datos precisos para que tomes decisiones inteligentes sobre tu nutrición. Mi objetivo no es solo que te veas bien, sino que tus números internos reflejen una salud óptima y duradera."
@@ -247,8 +247,8 @@
                 </div>
                 <div>
                     <h3 class="text-lg font-bold mb-2">Contacto</h3>
-                    <p>📍 [Tu Dirección Aquí]</p>
-                    <p>📧 [Tu Email Aquí]</p>
+                    <p>📍 Av. Apoquindo 4499</p>
+                    <p>📧 alvarosalinas.hbl@gmail.com</p>
                 </div>
                 <div>
                     <h3 class="text-lg font-bold mb-2">Legal</h3>
@@ -264,7 +264,7 @@
         // Función para redirigir a WhatsApp con el mensaje predefinido
         function redirectToWhatsApp() {
             // Número de WhatsApp (debes reemplazar XXXX con tu número)
-            const phoneNumber = "XXXXXXXXXX"; // Reemplaza con tu número de teléfono (ej. 525512345678)
+            const phoneNumber = "+56981590912"; // Reemplaza con tu número de teléfono (ej. 525512345678)
 
             // Mensaje automático URL-codificado
             const message = "Hola, vengo de la página web y me gustaría agendar mi Escáner Corporal de cortesía. ¿Tienen disponibilidad para una evaluación?";
